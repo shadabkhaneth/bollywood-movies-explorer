@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+:root {
+  --primary-color: #22254b;
+  --secondary-color: #373b69;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, #141e30, #243b55);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  color: white;
+}
+
+body.light-mode {
+  background: linear-gradient(to right, #ffffff, #f0f0f0);
+  color: #111;
+}
+
+body.light-mode .movie {
+  background-color: #f5f5f5;
+}
+
+body.light-mode .overview {
+  background-color: #fff;
+  color: #000;
+}
+
+body.light-mode .search,
+body.light-mode .fav-btn-header,
+body.light-mode .theme-btn {
+  color: #111;
+  border-color: #aaa;
+}
+
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--secondary-color);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.search {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  color: #fff;
+}
+
+.search::placeholder {
+  color: #7378c5;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie {
+  width: 300px;
+  margin: 1rem;
+  background-color: var(--secondary-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.movie:hover {
+  transform: scale(1.02);
+}
+
+.movie img {
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.movie:hover img {
+  transform: scale(1.05) rotate(1deg);
+}
+
+.movie-info {
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 1rem;
+}
+
+.movie-info span.green {
+  color: lightgreen;
+}
+
+.movie-info span.orange {
+  color: orange;
+}
+
+.movie-info span.red {
+  color: red;
+}
+
+.overview {
+  background-color: #fff;
+  color: #000;
+  padding: 1rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-height: 100%;
+  transform: translateY(101%);
+  overflow-y: auto;
+  transition: transform 0.3s ease-in;
+}
+
+.movie:hover .overview {
+  transform: translateY(0);
+}
+
+.fav-btn {
+  margin-top: 1rem;
+  background-color: crimson;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ✅ Compact Buttons Styling */
+.fav-btn-header,
+.theme-btn {
+  background-color: #ff0066;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 0.35rem 0.8rem;
+  margin-left: 0.5rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fav-btn-header:hover {
+  background-color: #cc0052;
+}
+
+.theme-btn {
+  background-color: #444;
+}
+
+.theme-btn:hover {
+  background-color: #222;
+}
+
+body.light-mode .theme-btn {
+  background-color: #ddd;
+  color: #000;
+}
+
+body.light-mode .fav-btn-header {
+  background-color: #ff80aa;
+  color: #000;
+}
